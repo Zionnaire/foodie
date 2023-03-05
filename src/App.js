@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from "react";
+import Home from './pages/Homepage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,6 +13,7 @@ function App() {
   return (
     <div>
       <NavBar />
+      <Home />
     </div>
    
   );

@@ -2,19 +2,20 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.css";
+import Down from './Drop'
+// import styles from './NavBar.module.css'
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 function NavBar() {
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+      <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#">
           Foodie Xpress
         </a>
         <button
-          class="navbar-toggler"
+          class="navbar-toggle"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNav"
@@ -43,39 +44,11 @@ function NavBar() {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                Start Your Order
+                Login
               </a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Sign-Up
-              </a>
-              <div
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <a class="dropdown-item" href="#">
-                  Action
-                </a>
-                <a class="dropdown-item" href="#">
-                  Another action
-                </a>
-                <a class="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </div>
-            </li>
-
-            <button>Get Started</button>
           </ul>
+          <Down />
         </div>
       </nav>
     </>
