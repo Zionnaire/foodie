@@ -6,7 +6,7 @@ import food5 from "../images/img5.png"
 import food6 from '../images/img6.png'
 import React from "react";
 
-export default function Vendors(){
+export default function FullVendors(){
     return(
         <>
         <section className="vend-sec1">
@@ -79,9 +79,71 @@ export default function Vendors(){
                 <h6>87% (791)</h6>
               </div>
             </div>
-            <div className="vend-btn">
-            <button>See more</button>
-          </div>
+
+            <div className="all-foods">
+              <div className="col-md-72" id="banner-col3-2">
+                <img
+                  class="img-responsive rounded mx-auto d-block"
+                  id="food-1"
+                  src={food4}
+                  alt=""
+                />
+                <h5>KILIMANJARO</h5>
+                <h6>87% (791)</h6>
+              </div>
+              <div className="col-md-72" id="banner-col3-2">
+                <img
+                  class="img-responsive rounded mx-auto d-block"
+                  id="food-1"
+                  src={food5}
+                  alt=""
+                />
+                <h5>OLA MUMMY</h5>
+                <h6>87% (791)</h6>
+              </div>
+              <div className="col-md-72" id="banner-col3-2">
+                <img
+                  class="img-responsive rounded mx-auto d-block"
+                  id="food-1"
+                  src={food6}
+                  alt=""
+                />
+                <h5>OFADA SPOT</h5>
+                <h6>87% (791)</h6>
+              </div>
+            </div>
+            <div className="all-foods">
+              <div className="col-md-72" id="banner-col3-2">
+                <img
+                  class="img-responsive rounded mx-auto d-block"
+                  id="food-1"
+                  src={food4}
+                  alt=""
+                />
+                <h5>KILIMANJARO</h5>
+                <h6>87% (791)</h6>
+              </div>
+              <div className="col-md-72" id="banner-col3-2">
+                <img
+                  class="img-responsive rounded mx-auto d-block"
+                  id="food-1"
+                  src={food5}
+                  alt=""
+                />
+                <h5>OLA MUMMY</h5>
+                <h6>87% (791)</h6>
+              </div>
+              <div className="col-md-72" id="banner-col3-2">
+                <img
+                  class="img-responsive rounded mx-auto d-block"
+                  id="food-1"
+                  src={food6}
+                  alt=""
+                />
+                <h5>OFADA SPOT</h5>
+                <h6>87% (791)</h6>
+              </div>
+            </div>
           </div>
           
             </div>

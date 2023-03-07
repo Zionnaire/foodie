@@ -10,9 +10,9 @@ export default function SideBar(){
         <div className='section-3'>
           <img src={Brand} alt='' className='brand-img'/>
           <div className='client'>
-          <div>
+          
              <img className='client-img' src={Girl} alt=""/>
-          </div>
+          
             <h1>John Doe</h1>
             <h6>johndoe@gmail.com</h6>
           </div>

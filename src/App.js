@@ -13,6 +13,8 @@ import {
 } from "react-router-dom";
 
 import Vendor from './pages/Vendors';
+import FullVendor from './pages/FullVendor';
+import Rest from './pages/Rest';
 function App() {
   return (
     <>
@@ -21,6 +23,8 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/vendors' element={<Vendor/>}/>
+      <Route path='/fullVendors' element={<FullVendor/>}/>
+      <Route path='/restaurants' element={<Rest/>}/>
     </Routes>
     </BrowserRouter>
     <div>

@@ -444,7 +444,7 @@ placeholder {
 .section-1 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   width: 25%;
   background-color: #f6842a;
@@ -461,9 +461,14 @@ placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0;
+  /* padding: 40px 0; */
   gap: 100px;
   width: 100px;
+}
+
+.brand-img{
+  padding: 50px 0;
+  width: 95%;
 }
 
 .client {
@@ -474,7 +479,7 @@ placeholder {
 }
 
 .client-img {
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 .client h1 {
@@ -602,8 +607,7 @@ placeholder {
 
 #vend-gen {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+ 
 }
 
 .vend-sec1 {
@@ -628,7 +632,7 @@ placeholder {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  gap: 20px;
+  /* gap: 20px; */
   background: #ffffff;
   border: 1px solid #cccccc;
   border-radius: 30px;
@@ -643,6 +647,7 @@ placeholder {
   line-height: 28px;
   color: #231f1f;
   padding-left: 20px;
+  padding-bottom: 0;
 }
 
 .vend-btn {
@@ -665,21 +670,129 @@ placeholder {
   padding: 8px 30px;
 }
 
-@media screen and (min-width: 780px) {
-  button {
-    display: none;
-  }
+.vend-sec3 hr{
+  width: 100%;
+  border: 1px solid #CCCCCC;
+  padding: 10px 0;
 }
 
-@media screen and (max-width: 425px) {
-  #banner-container {
-    padding: 40px 0;
-  }
-
-  #banner-row img {
-    display: none;
-  }
+.res-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
 }
+
+.res-2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  background: #FFFFFF;
+border: 1px solid #CCCCCC;
+border-radius: 30px
+}
+
+.res-3{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+  gap: 20px;
+}
+
+.res-3 h1{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 30px;
+color: #231F1F;
+padding: 20px 0 0;
+
+}
+
+.res-3 hr{
+  width: 100%;
+  border: 1px solid #CCCCCC;
+  padding: 0;
+  margin: 0;
+}
+
+.res-4{
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+
+.res-4-cont{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+
+.res-4-cont h1{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 28px;
+
+color: #231F1F;
+}
+
+.res-4-cont h2{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 20px;
+width: 70%;
+color: #231F1F;
+}
+
+.res-4-cont h3{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 25px;
+color: #231F1F;
+}
+
+#line{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #CCCCCC;
+  /* width: 100%; */
+}
+
+@media screen and (max-width: 1000px){
+    .section-1{
+        width: 17%;
+    }
+
+    .brand-img{
+        width: 95%;
+    }
+
+    .client h6{
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    #dash-btn{
+        padding: 10px 20px;
+    }
+}
+
 
 @media screen and (max-width: 768px) {
   .all-foods {
@@ -752,12 +865,75 @@ placeholder {
   .brand-img {
     width: 100%;
   }
+
+  .client-img{
+    width: 75%;
+  }
+
+  .client h1{
+    font-size: 20px;
+  }
+
+  .client h6{
+    font-size: 10px;
+  }
+
+  .vend-sub{
+
+    justify-content: center;
+    /* align-items: center; */
+  } 
+
+  .vend-sec3{
+    justify-content: center;
+    align-items: center;
+  }
+
+  .vend-sec3 h2{
+    padding: 0;
+  }
+
+  .dash-3 h4{
+    font-size: 20px;
+    width: 60%;
+  }
+
+  #dash-btn{
+    padding: 5px;
+  }
+
+  .res-3{
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .res-4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+
+  }
+
+  .dash h6, .dash h5{
+    font-size: 10px;
+  }
 }
 
 @media screen and (max-width: 425px) {
+
+  #banner-container {
+    padding: 40px 0;
+  }
+
+  #banner-row img {
+    display: none;
+  }
   .brand-img,
   .client-img {
     width: 75%;
+    margin: 0 10px;
   }
 
   .client h1 {
@@ -765,7 +941,7 @@ placeholder {
   }
 
   .client h6 {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   #dash-btn {
@@ -777,6 +953,73 @@ placeholder {
     font-size: 10px;
     white-space: nowrap;
   }
+  .vend-sub{
+    justify-content: center;
+    align-items: center;
+  } 
+
+  .vend-sec3{
+    justify-content: center;
+    align-items: center;
+  }
+
+  .vend-sec3 h2{
+    padding: 0;
+  }
+
+  .dash-3 h4{
+    font-size: 15px;
+    width: 70%;
+  }
+  .client-img{
+    width: 60%;
+  }
+  .client h1{
+    font-size: 15px;
+  }
+
+  .client h6{
+    font-size: 8px;
+  }
+
+  .dash h5{
+    font-size: 8px;
+  }
+
+  .res-4,.res-3, .res-2, .res-1{
+    align-items: center;
+    justify-content: center;
+  }
+
+  .res-3 h1{
+    font-size: 20px;
+  }
+
+  .res-4-cont{
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+  .res-4 img{
+    width: 60%;
+  }
+
+  .res-4-cont h1, .res-4-cont h2, .res-4-cont h3{
+    font-size: 15px;
+  }
+
+  .res-4-cont h2{
+    width: 100%;
+    text-align: center;
+  }
+
+  .client{
+    gap: 0;
+  }
+  .client-img{
+    width: 50%;
+  }
+
 }
 
 @media screen and (max-width: 320px) {
@@ -844,5 +1087,53 @@ placeholder {
   .dash h6 {
     font-size: 7px;
     white-space: nowrap;
+  }
+
+  .res-4,.res-3, .res-2, .res-1{
+    align-items: center;
+    justify-content: center;
+  }
+
+  .res-3 h1{
+    font-size: 20px;
+  }
+
+  .res-4-cont{
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+  .res-4 img{
+    width: 60%;
+  }
+
+  .res-4-cont h1, .res-4-cont h2, .res-4-cont h3{
+    font-size: 15px;
+  }
+
+  .res-4-cont h2{
+    width: 100%;
+    text-align: center;
+  }
+
+  .client{
+    gap: 0;
+  }
+  .client-img{
+    width: 50%;
+  }
+
+  .client h1{
+    font-size: 12px;
+  }
+
+  .client h6{
+    font-size: 6px;
+    font-weight: 800;
+  }
+
+  #dash-btn{
+    font-size: 8px;
+    padding: 0;
   }
 }
