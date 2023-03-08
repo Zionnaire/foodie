@@ -774,7 +774,34 @@ color: #231F1F;
   /* width: 100%; */
 }
 
+@media screen and (min-width: 900px){
+
+  .navbar-toggle{
+    display: none;
+   }
+    .section-1{
+        width: 17%;
+    }
+
+    .brand-img{
+        width: 95%;
+    }
+
+    .client h6{
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    #dash-btn{
+        padding: 10px 20px;
+    }
+}
+
 @media screen and (max-width: 1000px){
+
+  /* .navbar-toggle{
+    display: none;
+   } */
     .section-1{
         width: 17%;
     }
