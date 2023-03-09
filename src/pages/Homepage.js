@@ -9,11 +9,24 @@ import food5 from "../images/img5.png"
 import food6 from '../images/img6.png'
 import chef from "../images/chef.png";
 import man from "../images/Ellipse 3.png";
-import Footer from "../components/Footer/Footer";
-import React from "react";
+import Footer from "../components/Footer";
+import React, { useState } from "react";
 import NavBar from '../components/NavBar'
+import axios from "axios";
 
 export default function Home() {
+  const [menu, setMenu] = useState([])
+  const fetchMenu = async()=>{
+    let data = await axios.get('https://api.spoonacular.com/food/menuItems/search', {
+      headers:{
+        'X-RapidAPI-Key': '3e22625efdmsh8aab2c5eac8ae17p12adfejsnb56a15a6ef2b',
+    'X-RapidAPI-Host': 'restaurants-api.p.rapidapi.com'
+      }
+    })
+    
+    // console.log(data.data.menuItems);
+  }
+  fetchMenu()
   return (
     <div>
       <NavBar />
@@ -250,7 +263,7 @@ export default function Home() {
         </div>
       </section>
 
-     {/* <Footer/> */}
+     <Footer/>
     </div>
   );
 }

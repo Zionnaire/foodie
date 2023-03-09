@@ -4,9 +4,14 @@ import food3 from "../images/img3.png";
 import food4 from "../images/img4.png"
 import food5 from "../images/img5.png"
 import food6 from '../images/img6.png'
-import React from "react";
+import React, { useState } from "react";
+import { Button, Modal } from "react-bootstrap";
 
 export default function Vendors(){
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
     return(
         <>
         <section className="vend-sec1">
@@ -16,7 +21,7 @@ export default function Vendors(){
                 <hr/>
             <div className="foods">
           <div className="all-foods">
-              <div className="col-md-72" id="banner-col3-2">
+              <div className="col-md-72" id="banner-col3-2" onClick={handleShow}>
                 <img
                   class="img-responsive rounded mx-auto d-block"
                   id="food-1"
@@ -25,6 +30,22 @@ export default function Vendors(){
                 />
                 <h5>KFC</h5>
                 <h6>87% (791)</h6>
+                <Modal show={show} onHide={handleClose} size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal >
               </div>
               <div className="col-md-72" id="banner-col3-2">
                 <img

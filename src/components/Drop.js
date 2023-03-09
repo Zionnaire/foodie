@@ -1,5 +1,6 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Down() {
   return (
@@ -9,8 +10,8 @@ function Down() {
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">Customer Sign-Up</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Retaurant Sign-Up</Dropdown.Item>
+      <Dropdown.Item><Link to={'/customer'}>Customer Sign-Up</Link></Dropdown.Item>
+        <Dropdown.Item><Link to={'/restaurant'}>Retaurant Sign-Up</Link></Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

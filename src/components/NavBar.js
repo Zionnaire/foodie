@@ -3,6 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Down from './Drop'
+// import Login from "../pages/Login";
 // import styles from './NavBar.module.css'
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
@@ -11,11 +12,11 @@ function NavBar() {
   return (
     <>
       <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">
+       <Link to={"/"}><a class="navbar-brand" >
           Foodie Xpress
-        </a>
+        </a></Link>
         <button
-          class="navbar-toggle"
+          class="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNav"
@@ -43,9 +44,9 @@ function NavBar() {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+                <Link to={`/login`}> <a class="nav-link">
                 Login
-              </a>
+              </a></Link>            
             </li>
           </ul>
           <Down />
