@@ -9,7 +9,8 @@ export default function Footer() {
     <div className="footer">
         <h3>Foodie Xpress</h3>
         <div className="footer-menu">
-          <div className="footer-bar1">
+          <div className="footer-bar">
+            <div className="footer-bar1">
             <h5> Let's join Hands </h5>
             <ul>
               <li>Careers</li>
@@ -43,6 +44,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

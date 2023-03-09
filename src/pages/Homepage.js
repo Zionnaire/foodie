@@ -13,6 +13,7 @@ import Footer from "../components/Footer";
 import React, { useState } from "react";
 import NavBar from '../components/NavBar'
 import axios from "axios";
+import {ImLocation2} from "react-icons/im"
 
 export default function Home() {
   const [menu, setMenu] = useState([])
@@ -52,7 +53,7 @@ export default function Home() {
                   aria-describedby="emailHelp"
                 />
                 <button type="submit" class="btn" id="btn11">
-                  Use current location
+                <ImLocation2/> Use current location
                 </button>
               </div>
             </div>
