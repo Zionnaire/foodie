@@ -33,6 +33,7 @@ function NavBar() {
             <Down />
           </Nav>
         </Navbar.Collapse>
+        {/* </nav> */}
       </Navbar>
     </>
   );

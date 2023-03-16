@@ -52,6 +52,10 @@
   
 }
 
+.w-100 a{ 
+  text-decoration: none;
+}
+
 .nav-link{
   color: #ffffff !important;
 }
@@ -506,15 +510,16 @@ placeholder {
   font-size: 24px;
   line-height: 29px;
   text-align: center;
+  text-decoration: none;
   color: #ffffff;
   padding: 5px 20px;
   border: none;
   white-space: nowrap;
 }
-
-#banner-col5 {
-  padding-bottom: 30px;
+#banner-col4 Link{
+  text-decoration: none;
 }
+
 
 #banner-col5 h1 {
   font-family: "Montserrat";
@@ -1486,7 +1491,7 @@ color: #231F1F;
 @media screen and (max-width: 768px) {
   .navbar-collapse {
     display: flex !important;
-    flex-direction: column !important;
+    /* flex-direction: column !important; */
     gap: 5px !important;
     
   }

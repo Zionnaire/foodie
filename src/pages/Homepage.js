@@ -11,6 +11,7 @@ import chef from "../images/chef.png";
 import man from "../images/Ellipse 3.png";
 import Footer from "../components/Footer";
 import React, { useState } from "react";
+import { BrowserRouter, Link } from "react-router-dom";
 import NavBar from '../components/NavBar'
 import axios from "axios";
 import {ImLocation2} from "react-icons/im"
@@ -176,7 +177,7 @@ export default function Home() {
                 Join forces with foodie Xpress! You may increase sales and seize
                 new chances with the aid of our technology and user base!
               </h4>
-              <button id="join">Join us</button> 
+              <Link to={'/customer'}><button id="join">Join us</button></Link> 
             </div>
           </div>
         </div>
