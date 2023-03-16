@@ -2,6 +2,10 @@ import SidebarMenu from 'react-bootstrap-sidebar-menu';
 import Brand from '../images/Brand.png'
 import Girl from '../images/Girl.png'
 import React from 'react';
+import {AiTwotoneSetting} from 'react-icons/ai'
+import {SlLogout} from 'react-icons/sl'
+import {RiFileHistoryLine} from 'react-icons/ri'
+import {MdDashboard} from 'react-icons/md'
 export default function SideBar(){
     return(
       <>
@@ -25,10 +29,10 @@ export default function SideBar(){
             <h6>johndoe@gmail.com</h6>
           </div>
           <div className='dash'>
-            <button id='dash-btn'>Dashboard</button>
-            <h5>Transaction History</h5>
-            <h5>Settings</h5>
-            <h6>Log out</h6>
+            <button id='dash-btn'><MdDashboard/> Dashboard</button>
+            <h5><RiFileHistoryLine/> Transaction History</h5>
+            <h5><AiTwotoneSetting/> Settings</h5>
+            <h6><SlLogout/> Log out</h6>
           </div>
     </ul>
   </div>
@@ -44,10 +48,10 @@ export default function SideBar(){
             <h6>johndoe@gmail.com</h6>
           </div>
           <div className='dash'>
-            <button id='dash-btn'>Dashboard</button>
-            <h5>Transaction History</h5>
-            <h5>Settings</h5>
-            <h6>Log out</h6>
+          <button id='dash-btn'><MdDashboard/> Dashboard</button>
+            <h5><RiFileHistoryLine/> Transaction History</h5>
+            <h5><AiTwotoneSetting/> Settings</h5>
+            <h6><SlLogout/> Log out</h6>
           </div>
           </div>
         </div>

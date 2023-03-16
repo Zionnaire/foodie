@@ -33,6 +33,7 @@ export default function Customer(){
     const[email, setEmail] = useState("")
     const[password, setPassword] = useState("");
     const[confirm, setConfirm] = useState('')
+    // const{newUser, setNewUser} = useState({});
     let handleRegister = (e) => {
         let userExist = users.findIndex(user => user.email === email)
         if(userExist == 1){
@@ -43,12 +44,12 @@ export default function Customer(){
             if(name !== undefined){
                 if(password !== undefined){
                     if(confirm === password){
-                        let newUser = {
+                       let newUser = {
                     
-                                 fullName: e.target.value,
-                                 email: e.target.value,
-                                 password: e.target.value
-                              };
+                                 fullName: setName(name),                                email: e.target.value,
+                                 password: setPassword(password),
+                                 email: setEmail(email)
+                              }
                               users.push(newUser)
                               alert(`Welcome ${newUser.fullName}! Kindly login`)
                               navigate('/login')         
@@ -75,13 +76,13 @@ export default function Customer(){
                 <div className="cust-sect3">
                     <h1>Customer Account Signup</h1>
                     <h3>Signup for a New Account</h3>
-                    <h3>Are you a Restaurant? <Link to={'/restaurant'}> Signup here</Link></h3>
+                    <h3>Are you a Restaurant? <Link to={'/register'}> Signup here</Link></h3>
 
                     <div className="cust-sect4">
-                        <input type='text' name="full name" placeholder="Full Name" onClick={e =>setName(e.target.value)}></input>
-                        <input type='email' name="phone" placeholder="Phone No/Email" onClick={e =>setEmail(e.target.value)}></input>
-                        <input type='password' name="password" placeholder="Password" onClick={e =>setPassword(e.target.value)}></input>
-                        <input type='password' name="confirm password" placeholder="Confirm Password" onClick={e =>setConfirm(e.target.value)}></input>
+                        <input type='text' name="full name" placeholder="Full Name" onChange={e =>setName(e.target.value)}></input>
+                        <input type='email' name="phone" placeholder="Phone No/Email" onChange={e =>setEmail(e.target.value)}></input>
+                        <input type='password' name="password" placeholder="Password" onChange={e =>setPassword(e.target.value)}></input>
+                        <input type='password' name="confirm password" placeholder="Confirm Password" onChange={e =>setConfirm(e.target.value)}></input>
                         <button type="" onClick={handleRegister}>Get Started</button>
                         <div className="disclaim">
                             <p>By clicking this button, you agree to our terms of services and disclaimer</p>

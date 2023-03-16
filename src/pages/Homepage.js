@@ -17,17 +17,7 @@ import {ImLocation2} from "react-icons/im"
 
 export default function Home() {
   const [menu, setMenu] = useState([])
-  const fetchMenu = async()=>{
-    let data = await axios.get('https://api.spoonacular.com/food/menuItems/search', {
-      headers:{
-        'X-RapidAPI-Key': '3e22625efdmsh8aab2c5eac8ae17p12adfejsnb56a15a6ef2b',
-    'X-RapidAPI-Host': 'restaurants-api.p.rapidapi.com'
-      }
-    })
-    
-    // console.log(data.data.menuItems);
-  }
-  fetchMenu()
+
   return (
     <div>
       <NavBar />
@@ -264,7 +254,7 @@ export default function Home() {
         </div>
       </section>
 
-     <Footer/>
+     {/* <Footer/> */}
     </div>
   );
 }

@@ -2,8 +2,14 @@ import food1 from '../images/food-1.png'
 import food2 from '../images/food-2.png'
 import food3 from '../images/food-3.png'
 import React from 'react'
+import {FiPlusSquare} from 'react-icons/fi'
+import { CartContext } from '../context/cartContext'
+import { click } from '@testing-library/user-event/dist/click'
+import { FiX } from 'react-icons/fi'
+import { useContext } from 'react'
+// import { createLocation } from '@remix-run/router/dist/history'
 
-export default function Restaurants(){
+export default function Restaurant(){
     let foodItems = [
         {
             id: 1,
@@ -11,6 +17,7 @@ export default function Restaurants(){
             title: "EggStar Meal",
             desc: "An Egg served with White Rice, Spaghetti, Fried Rice or Jollof Rice with a delicious sauce.",
             price: 500.00,
+    
 
         },
         {
@@ -20,6 +27,7 @@ export default function Restaurants(){
             desc: "Cripsy Fried Chicken and Chips with a cup of Latte.",
             price: 800.00,
             
+
         },
         {
             id: 3,
@@ -28,6 +36,7 @@ export default function Restaurants(){
             desc: "Fried Plantain served with White Rice, Spaghetti, Fried Rice or Jollof Rice with a delicious sauce coupled with soft drink.",
             price: 1500.00,
             
+
         },
         {
             id: 4,
@@ -35,6 +44,7 @@ export default function Restaurants(){
             title: "EggStar Meal",
             desc: "An Egg served with White Rice, Spaghetti, Fried Rice or Jollof Rice with a delicious sauce.",
             price: 500.00,
+          
 
         },
         {
@@ -44,6 +54,7 @@ export default function Restaurants(){
             desc: "Cripsy Fried Chicken and Chips with a cup of Latte.",
             price: 800.00,
             
+
         },
         {
             id: 6,
@@ -51,9 +62,44 @@ export default function Restaurants(){
             title: "Fried Rice & Plantain",
             desc: "Fried Plantain served with White Rice, Spaghetti, Fried Rice or Jollof Rice with a delicious sauce coupled with soft drink.",
             price: 1500.00,
-            
+          
+
         }
     ]
+    // bring context
+    const {cart, setCartLength, setCart} = useContext(CartContext)
+    const handleAddToCart = (item) => {
+        console.log(cart)
+       
+        if(cart.length === 0){
+            item.quantity= 1
+            //setCart([...cart,item])
+            cart.push(item)
+        }
+        else{
+
+            console.log(cart);
+            const findItem = cart.findIndex(cartItem=>(
+                item.id == cartItem.id
+            ))
+            if(findItem == -1){
+                item.quantity = 1
+                cart.push(item)
+            }
+            else{
+                let current = cart[findItem]
+                current.quantity = current.quantity +1
+                
+            }
+            
+        }
+        
+        //cart.push(item)
+    
+        // setCart(item)
+         setCartLength(cart.length)
+       
+      };
 
     return(
         <>
@@ -69,7 +115,8 @@ export default function Restaurants(){
                     <div className='res-4-cont'>
                     <h1>{food.title}</h1>
                    <h2> {food.desc}</h2>
-                    <h3>₦{food.price}</h3>
+                    <h3>₦{food.price} <FiPlusSquare  onClick={()=>{handleAddToCart(food)}}/> </h3>
+                    
 
                     </div>    
                 </div>

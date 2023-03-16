@@ -11,7 +11,7 @@ function Down() {
 
       <Dropdown.Menu>
       <Dropdown.Item><Link to={'/customer'}>Customer Sign-Up</Link></Dropdown.Item>
-        <Dropdown.Item><Link to={'/restaurant'}>Retaurant Sign-Up</Link></Dropdown.Item>
+        <Dropdown.Item><Link to={'/register'}>Retaurant Sign-Up</Link></Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );
