@@ -69,7 +69,7 @@ export default function Restaurant(){
     // bring context
     const {cart, setCartLength, setCart} = useContext(CartContext)
     const handleAddToCart = (item) => {
-        console.log(cart)
+        // console.log(cart)
        
         if(cart.length === 0){
             item.quantity= 1
@@ -78,7 +78,7 @@ export default function Restaurant(){
         }
         else{
 
-            console.log(cart);
+            // console.log(cart);
             const findItem = cart.findIndex(cartItem=>(
                 item.id == cartItem.id
             ))
@@ -89,7 +89,8 @@ export default function Restaurant(){
             else{
                 let current = cart[findItem]
                 current.quantity = current.quantity +1
-                
+                current.totalPrice = current.quantity * current.price
+                // current.price = current.quantity * current.price
             }
             
         }
@@ -108,8 +109,9 @@ export default function Restaurant(){
         <div className='res-3'>
             <h1>Chicken Republic</h1>
             <hr/>
-            {foodItems.map(food=>(
-                <div className='res-4'>
+            {foodItems.map((food, index)=>(
+
+                <div key={index} className='res-4'>
                   
                     <img src={`${process.env.PUBLIC_URL + food.img}`}/>
                     <div className='res-4-cont'>

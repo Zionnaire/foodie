@@ -24,7 +24,7 @@ function NavBar() {
               About Us
             </Link>
             <Link className="nav-link" to="/"> Contact Us</Link>
-            <Link className="nav-link" to="/vendors"> Start Your Order</Link>
+            <Link className="nav-link" to="/restaurants"> Start Your Order</Link>
             <Link className="nav-link" to="/login">
               Login
             </Link>

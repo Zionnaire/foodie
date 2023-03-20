@@ -13,7 +13,7 @@ export default function Dashboard() {
   // const context = useContext(CartContext)  
   const {cart, cartLength, setCart} = useContext(CartContext)
   //const [total,setTotal] = useState(0)
-  console.log(cart);
+  // console.log(cart);
   
   
 
@@ -62,22 +62,56 @@ export default function Dashboard() {
         });
       }
  }
+
+//  const DeleteButton = (props) => {
+  const [isDelete, setIsDelete] = useState(false);
+  const [deleteItem, setDeleteItem] = useState(false);
+  const [increaseItem, setIncreaseItem] = useState(false)
+
+  const handleDelete = () => {
+    let index = cart.findIndex(item =>item.id == item)
+           cart.splice(index,1)
+           let cartItem = cart[index] // Get the cart item with the particular delete button
+            // let entireItem = cart[cartItem] // Get the item  list
+            setIsDelete(cartItem)
+    setIsDelete(true);
+    if (isDelete) {
+      setIsDelete(false)
+      return <span>Deleted...</span>;
+    }
+  };
+
+  const handleDeleteItem = (food) => {
+    // console.log(index);
+    let index = cart.findIndex(item =>item == food)
+    // console.log(cart[index]);
+    let itemChange = cart[index]
+    let currentQ = itemChange.quantity -= 1 
+    itemChange.totalPrice = itemChange.price * currentQ
+    setDeleteItem(itemChange)
+    setDeleteItem(true)
+    if(deleteItem){
+      setDeleteItem(false)
+    }
+    // setDeleteItem(false)
+  }
+
+  const handleIncreaseItem = (food) => {
+    // console.log(index);
+    let index = cart.findIndex(item =>item.id == food.id)
+    // console.log(cart[index]);
+    let itemChange = cart[index]
+    let currentQ = itemChange.quantity += 1 
+    itemChange.totalPrice = itemChange.price * currentQ
+    cart[index] = itemChange
+    //setIncreaseItem(itemChange)
+    setIncreaseItem(true)
+    if(increaseItem){
+      setIncreaseItem(false)
+    }
+    // setDeleteItem(false)
+  }
   
- 
-  
-    // return (
-    //   <div>
-    //     <button onClick={getLocation}>Find My Location</button>
-    //     {location && (
-    //       <p>
-    //         Latitude: {location.lat} <br />
-    //         Longitude: {location.lng}
-    //       </p>
-    //     )}
-    //   </div>
-    // );
-  
-// const getLocation = LocationFinder()
   
   return (
     <>
@@ -129,22 +163,23 @@ export default function Dashboard() {
                 <p>{location}</p>
                 <hr/>
                 <div className="mod-4">
-                {(cart.length != 0)?cart.map(food => (
+                {(cart.length !== 0)?cart.map((food, index) => (
                   <>
                 
-                  <div className="mod-4-1">
+                  <div key={index} className="mod-4-1">
                     <h5>{food.title}</h5>
-                    <h5>₦{food.price}</h5>
+                    <h5>₦{food.totalPrice}</h5>
                   </div>
                   <div className="mod-4-2">
-                      <h5><MdOutlineCancelPresentation /> REMOVE</h5>
-                      <h5><FaRegMinusSquare /> {food.quantity} <AiOutlinePlusSquare /></h5>
+                      <h5><MdOutlineCancelPresentation onClick={handleDelete}/> REMOVE</h5>
+                      <h5><FaRegMinusSquare onClick={() =>handleDeleteItem(food)}/> {food.quantity} <AiOutlinePlusSquare onClick={() => handleIncreaseItem(food)}/></h5>
                     </div>
+                    <hr/>
                     </>
                 )): <div>Cart is empty</div>} 
                 </div>
   
-                <hr/>
+              
                     <div >
                       <>
                       {/* {let delivery = 1/10 * total} */}
@@ -183,7 +218,7 @@ export default function Dashboard() {
                 <Button variant="danger" onClick={handleClose}>
                   Cancel
                 </Button>
-                <Button variant="primary" onClick={handleClose}>
+                <Button variant="primary" onClick={'/checkout'}>
                 PROCEED TO CHECKOUT
                 </Button>
               </Modal.Footer>
