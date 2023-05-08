@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import NavBar from "../components/NavBar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 let users = [
     {
@@ -33,6 +36,16 @@ export default function Login(props) {
     const[email, setEmail] = useState("");
     const[password, setPassword] = useState("");
 
+    let handleLogin = async()=>{
+      let req = {
+        email:email,
+        password:password
+      }
+      let response = await axios.post('http://localhost:5000/login', req)
+      toast(response.data.message)
+      //console.log(response.data)
+    }
+
     let handleSubmit = () => {
         let userExist = users.findIndex(user => user.email === email)
         if(userExist == -1){
@@ -53,6 +66,7 @@ export default function Login(props) {
   return (
     <>
     <NavBar/>
+    <ToastContainer />
       <section className="cust-sect1">
         <div className="cust-sect2">
           <div className="cust-sect3">
@@ -74,7 +88,7 @@ export default function Login(props) {
                 placeholder="Password"
               ></input>
 
-              <button onClick={handleSubmit} type="">Login</button>
+              <button onClick={handleLogin} type="">Login</button>
               <div className="disclaim">
               <p>
                 Not a customer?  <Link to= {'/customer'}>Click here to Register</Link> 

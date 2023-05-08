@@ -3,6 +3,7 @@ import React, {useState} from "react"
 import NavBar from "../components/NavBar"
 import { BrowserRouter as Router, Link} from "react-router-dom"
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 // import { useState } from "react"
 
 let users = [
@@ -34,6 +35,19 @@ export default function Customer(){
     const[password, setPassword] = useState("");
     const[confirm, setConfirm] = useState('')
     // const{newUser, setNewUser} = useState({});
+    let registerUser =async() =>{
+        let firstName = name.split(" ")[0]
+        let lastName = name.split(" ")[1]
+        let request = {
+            firstName:firstName,
+            lastName:lastName,
+            email:email,
+            password:password,
+            cPassword: confirm
+        }
+        let response = await axios.post('http://localhost:5000/register',request)
+        console.log(response)
+    }
     let handleRegister = (e) => {
         let userExist = users.findIndex(user => user.email === email)
         if(userExist == 1){
@@ -83,7 +97,7 @@ export default function Customer(){
                         <input type='email' name="phone" placeholder="Phone No/Email" onChange={e =>setEmail(e.target.value)}></input>
                         <input type='password' name="password" placeholder="Password" onChange={e =>setPassword(e.target.value)}></input>
                         <input type='password' name="confirm password" placeholder="Confirm Password" onChange={e =>setConfirm(e.target.value)}></input>
-                        <button type="" onClick={handleRegister}>Get Started</button>
+                        <button type="" onClick={registerUser}>Get Started</button>
                         <div className="disclaim">
                             <p>By clicking this button, you agree to our terms of services and disclaimer</p>
                         </div>

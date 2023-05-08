@@ -6,6 +6,7 @@ import {AiTwotoneSetting} from 'react-icons/ai'
 import {SlLogout} from 'react-icons/sl'
 import {RiFileHistoryLine} from 'react-icons/ri'
 import {MdDashboard} from 'react-icons/md'
+import { Link } from 'react-router-dom';
 export default function SideBar(){
     return(
       <>
@@ -20,7 +21,7 @@ export default function SideBar(){
     <span></span>
     <span></span>
     <ul id="menu">
-    <img src={Brand} alt='' className='brand-img'/>
+    <img src={Brand}alt='' className='brand-img'/>
           <div className='client'>
           
              <img className='client-img' src={Girl} alt=""/>

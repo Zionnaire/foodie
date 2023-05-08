@@ -601,7 +601,6 @@ placeholder {
 .section-1 {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   width: 25%;
   background-color: #f6842a;
@@ -881,6 +880,30 @@ placeholder {
   padding: 20px 0 0;
 }
 
+.res-3-img{
+  /* width:20%; */
+  border: 1px solid #cccccc;
+  /* padding: 30px; */
+}
+
+.res-3-text{
+  border: 1px solid #cccccc;
+}
+
+.res-3-btn{
+  background-color: #F6842A;
+  border-radius: 20px;
+  border: none;
+  padding: 5px 20px;
+  color: #ffffff;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+
+}
+
 .res-3 hr {
   width: 100%;
   border: 1px solid #cccccc;
@@ -892,6 +915,13 @@ placeholder {
   display: flex;
   justify-content: flex-start;
   gap: 20px;
+  width: 100%;
+}
+
+.res-4-img{
+  max-width: 200px;
+  /* max-height: 60px; */
+  border-radius: 20px;
 }
 
 .res-4-cont {
@@ -962,6 +992,7 @@ placeholder {
   justify-content: center;
   align-items: center;
   width: 100%;
+  background: #f6842a;
 }
 
 .cust-sect3 h1 {
@@ -986,7 +1017,7 @@ placeholder {
 }
 
 .cust-sect4 {
-  background: #f6842a;
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1375,7 +1406,8 @@ line-height: 20px;
 color: #231F1F;
 
 }
-/* Modal Styling*/
+
+/* Modal Styling Starts Here */
 
 .mod-1 {
   display: flex;
@@ -1444,6 +1476,74 @@ color: #231F1F;
   justify-content: space-between;
 }
 
+/* About Us CSS*/
+
+.about1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: url("../src/images/res.jpeg");
+  background-size: cover;
+  height: 50vh;
+}
+
+.about21{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.about22{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.about23{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+align-items: center;
+  width: 100%;
+}
+
+.about23 h3{
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 28px;
+  text-align: justify;
+  padding: 20px 0;
+  width: 100%;
+}
+
+#about-ul{
+  display: flex;
+  /* flex-direction: column; */
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+ #about-ul h6 a{
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  font-style: italic;
+  width: 10%;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+}
+
+
 @media screen and (min-width: 900px) {
   .navbar-toggle {
     display: none;
@@ -1467,9 +1567,7 @@ color: #231F1F;
 }
 
 @media screen and (max-width: 1000px) {
-  /* .navbar-toggle{
-    display: none;
-   } */
+
   .section-1 {
     width: 17%;
   }
@@ -1615,7 +1713,9 @@ color: #231F1F;
     justify-content: center;
     align-items: flex-start;
     gap: 0;
+    width: 100%;
   }
+
 
   .dash h6,
   .dash h5 {
@@ -1659,7 +1759,7 @@ color: #231F1F;
   .cust-sect3 h1 {
     font-size: 28px;
     line-height: 28px;
-  }
+    }
   .cust-sect4 button {
     font-size: 18px;
     white-space: nowrap;
@@ -1753,7 +1853,7 @@ color: #231F1F;
     gap: 0;
   }
   .res-4 img {
-    width: 60%;
+    width: 40%;
   }
 
   .res-4-cont h1,
@@ -1787,9 +1887,28 @@ color: #231F1F;
 }
 
 @media screen and (max-width: 320px) {
-  /* .navbar-expand-lg{
-          width: 100%;
-      } */
+
+  .dash-cont1{
+display: flex;
+flex-direction: column;
+gap: 10px;
+  }
+
+  .dash-cont1 h1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 45px;
+    color: #f6842a;
+    padding: 15px 0;
+}
+
+.dash-icon{
+  display: flex;
+  justify-content: flex-start;
+}
+ 
   #btn11 {
     font-size: 10px;
     padding: 10px;
@@ -1905,4 +2024,190 @@ color: #231F1F;
     font-size: 8px;
     padding: 0;
   }
+}
+@media screen and (max-width: 250px){
+  .navbar-expand-lg .navbar-brand {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 39px;
+    color: #ffffff;
+    margin-left: 0rem;
+    text-align: center;
+}
+.w-100 a {
+    text-decoration: none;
+    white-space: nowrap;
+    padding-left: 18px;
+    font-size: 13px;
+}
+#banner-row2 h3 {
+  text-align: center;
+  font-size: 25px;
+}
+.first-row-btn button {
+  padding: 18px 30px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+#banner-row3 h1, #banner-col5 h1 {
+  text-align: center;
+  font-size: 22px;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.375rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control::placeholder{
+  font-size: 12px; 
+  color: #fff;
+}
+
+.slide-3 h5 {
+  width: 100%;
+  text-align: center;
+}
+
+.slide-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.slide-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  background: #f6842a;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  padding: 20px 30px;
+  grid-gap: 15px;
+  gap: 15px;
+}
+
+.slide-3 h5, .sect-2 p {
+    width: 100%;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 24px;
+    color: #ffffff;
+}
+
+#banner-col4 h4 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 35px;
+  text-align: center;
+  color: #000000;
+  width: 66%;
+  padding-bottom: 40px;
+}
+.sect-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+}
+#banner-col1 {
+  width: 58%;
+}
+.cust-sect4 {
+  grid-gap: 40px;
+  gap: 40px;
+  width: 100%;
+  padding: 70px 20px 5px;
+}
+#banner-col p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 44px;
+  color: #000000;
+}
+#btn11 {
+  position: absolute;
+  top: 7px;
+  right: 0;
+  color: white !important;
+}
+.cust-sect2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+.cust-sect3 h1 {
+  font-size: 17px;
+  line-height: 28px;
+  padding-bottom: 0px;
+}
+.cust-sect3 h3 {
+  padding-bottom: 30px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #232323;
+  padding-bottom: 10px;
+}
+.dash-cont1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+.dash-cont1 h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 20px;
+  color: #f6842a;
+}
+.dash-icon {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  grid-gap: 20px;
+}
+.section-1 {
+  width: 15%;
+  background-color: #fff;
+}
+.hello-cont h2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 38px;
+  color: #231f1f;
+}
 }

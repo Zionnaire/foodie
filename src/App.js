@@ -16,9 +16,11 @@ import Rest from "./pages/Rest";
 import Customer from "./pages/Customer";
 import Register from "./pages/Restaurants";
 import Login from "./pages/Login";
+import About from "./pages/About Us";
 import Check from "./pages/Check";
 import { CartProvider } from "./context/cartContext";
 import "./App.css";
+import VendorDash from "./pages/VendorDash";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const loginTrue = () => {
@@ -31,8 +33,10 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/About Us" element={<About />} />
             <Route path="/vendors" element={<Vendor />} />
             <Route path="/fullVendors" element={<FullVendor />} />
+            <Route path="/vendorDash" element={< VendorDash/>} />
             <Route
               path="/restaurants"
               element={

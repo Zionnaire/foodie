@@ -3,15 +3,15 @@ import vector from "../images/Vector.png";
 import { FaShoppingCart , FaRegMinusSquare} from "react-icons/fa";
 import {AiOutlinePlusSquare} from "react-icons/ai"
 import { BsFillEnvelopeCheckFill } from "react-icons/bs";
-import { MdAddAlert, MdFoodBank, MdOutlineCancelPresentation } from "react-icons/md";
-import React, { useState, useContext, Component, useEffect } from "react";
+import { MdAddAlert, MdOutlineCancelPresentation } from "react-icons/md";
+import React, { useState, useContext, useEffect } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { click } from "@testing-library/user-event/dist/click";
 import { CartContext } from "../context/cartContext";
 
 export default function Dashboard() {
   // const context = useContext(CartContext)  
-  const {cart, cartLength, setCart} = useContext(CartContext)
+  const {cart, cartLength} = useContext(CartContext)
   //const [total,setTotal] = useState(0)
   // console.log(cart);
   
@@ -24,7 +24,7 @@ export default function Dashboard() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   // const [location, setLocation] = useState('')
-  const[itemExist, setItemExist] = useState([])
+  // const[itemExist, setItemExist] = useState([])
 
   let total = 0;
   let charges= 0;
@@ -69,7 +69,7 @@ export default function Dashboard() {
   const [increaseItem, setIncreaseItem] = useState(false)
 
   const handleDelete = () => {
-    let index = cart.findIndex(item =>item.id == item)
+    let index = cart.findIndex(item =>item.id === item)
            cart.splice(index,1)
            let cartItem = cart[index] // Get the cart item with the particular delete button
             // let entireItem = cart[cartItem] // Get the item  list
@@ -83,7 +83,7 @@ export default function Dashboard() {
 
   const handleDeleteItem = (food) => {
     // console.log(index);
-    let index = cart.findIndex(item =>item == food)
+    let index = cart.findIndex(item =>item === food)
     // console.log(cart[index]);
     let itemChange = cart[index]
     let currentQ = itemChange.quantity -= 1 
@@ -98,7 +98,7 @@ export default function Dashboard() {
 
   const handleIncreaseItem = (food) => {
     // console.log(index);
-    let index = cart.findIndex(item =>item.id == food.id)
+    let index = cart.findIndex(item =>item.id === food.id)
     // console.log(cart[index]);
     let itemChange = cart[index]
     let currentQ = itemChange.quantity += 1 
@@ -152,7 +152,7 @@ export default function Dashboard() {
                 <div className="mod-2">
                   <div className="mod-3">
                   <input
-                value=''
+                value={location}
                   onChange={location}
                   type="text"
                   placeholder="E.g Ajibade Bustop, Mokola, Ibadan, Oyo State"
