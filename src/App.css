@@ -771,6 +771,17 @@ placeholder {
   padding-bottom: 20px;
 }
 
+
+.select-option{
+  border: none;
+    background: #ffffff;
+    border-radius: 20px;
+    width: 80%;
+    padding: 18px 20px;
+}
+.options{
+  width: 50%;
+}
 #vend-gen {
   display: flex;
   width: 100%;
@@ -1003,7 +1014,7 @@ placeholder {
   font-size: 38px;
   line-height: 38px;
   text-align: center;
-  color: #232323;
+  color: #ffffff;
 }
 
 .cust-sect3 h3 {

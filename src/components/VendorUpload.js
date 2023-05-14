@@ -49,8 +49,11 @@ export default function VendorUpload() {
   const [price, setPrice] = useState('')
   const [title, setTitle] = useState('')
   const [desc, setDesc] = useState('')
+  const [dish, setDish] = useState(0)
+  const [available, setAvailable] = useState()
 
   let handleSubmit = async() =>{
+    
     try {
         const formData = new FormData()
         formData.append('image',image)
@@ -74,6 +77,7 @@ export default function VendorUpload() {
               <input className="res-3-text" type="text" placeholder="Input Title Here" onChange={e =>setTitle(e.target.value)}/>
               <input className="res-3-text" type="text" placeholder="Input Description Here" onChange={e =>setDesc(e.target.value)}/>
               <button className="res-3-btn" onClick={handleSubmit}>Submit</button>
+              <h1 className="staus" >Available: {}</h1>
                
             <hr />
             {foodItems.map((food, index) => (

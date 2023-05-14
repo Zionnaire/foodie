@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, Navigate} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Customer from "./Customer";
 
 let users = [
     {
@@ -35,34 +36,38 @@ export default function Login(props) {
     let navigate = useNavigate();
     const[email, setEmail] = useState("");
     const[password, setPassword] = useState("");
+    const [userType, setUserType] = useState('')
 
     let handleLogin = async()=>{
       let req = {
         email:email,
-        password:password
+        password:password,
+        role: userType
       }
-      let response = await axios.post('http://localhost:5000/login', req)
+      console.log(req)
+      let response = await axios.post('http://localhost:5000/api/v1/users/login', req)
       toast(response.data.message)
+      navigate("/vendors")
       //console.log(response.data)
     }
 
-    let handleSubmit = () => {
-        let userExist = users.findIndex(user => user.email === email)
-        if(userExist == -1){
-            alert("User does not exist, Please SignUp" )
-            navigate('/customer')
+    // let handleSubmit = () => {
+    //     let userExist = users.findIndex(user => user.email === email)
+    //     if(userExist == -1){
+    //         alert("User does not exist, Please SignUp" )
+    //         navigate('/customer')
 
-        }
-        else{
-            if(users[userExist].password === password){
-                props.changeLoginState()
-                navigate("/vendors")
-            }
-            else{
-                alert("Wrong Password! Kindly check and try again")
-            }
-        }
-    }
+    //     }
+    //     else{
+    //         if(users[userExist].password === password){
+    //             props.changeLoginState()
+    //             navigate("/vendors")
+    //         }
+    //         else{
+    //             alert("Wrong Password! Kindly check and try again")
+    //         }
+    //     }
+    // }
   return (
     <>
     <NavBar/>
@@ -76,7 +81,7 @@ export default function Login(props) {
                 type="text"
                 name="email"
                 value={email}
-                onChange={e=>setEmail(e.target.value)}
+                onChange={e=>setEmail(e.target.value)} 
                 placeholder="Phone No/Email"
               ></input>
 
@@ -87,6 +92,12 @@ export default function Login(props) {
                 onChange={e=>setPassword(e.target.value)}
                 placeholder="Password"
               ></input>
+              <select value={userType } onChange={e=>setUserType(e.target.value)} className="select-option">
+              <option className="options" value="Customer">Customer</option>
+              <option className="options" value="Vendor">Vendor</option>
+              </select> 
+
+
 
               <button onClick={handleLogin} type="">Login</button>
               <div className="disclaim">
